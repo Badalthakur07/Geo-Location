@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-Geoloaction</title>
+</head>
+<body>
+<button onclick="getLocation()">Get location</button>
+ <p id="result"></p>
+<script type="text/javascript">
+var x = document.getElementById("result");
+ function getLocation(){
+     if(navigator.geoloaction){
+navigator.geolocation.getCurrentPosition(showPostion);  
+}else{
+ x.innerHTML="Geo location is not supported by the browser.";
+}  
+}
+
+function showPostion(postion){
+ x.innerHTML = "Latitude: "+postion.coords.latitude+"<br> Longitude:" + postion.coords.longitude;
+ }
+    </script>
+</body>
+</html>
